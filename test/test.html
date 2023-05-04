@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stream Data Example</title>
+  </head>
+  <body>
+    <h1>Stream Data Example</h1>
+    <div id="stream-container"></div>
+    <script>
+      const streamContainer = document.getElementById("stream-container");
+
+      // Fetch the stream data from the server
+      fetch("http://localhost:3000/stream-data")
+        .then((response) => {
+          // Create a new ReadableStream object from the response body
+          const stream = response.body;
+
+          // Create a new TextDecoder object to convert the stream chunks to text
+          const decoder = new TextDecoder("utf-8");
+
+          // Set up a function to handle each chunk of data in the stream
+          const handleChunk = (chunk) => {
+            const chunkText = decoder.decode(chunk);
+            const chunkElement = document.createElement("p");
+            chunkElement.textContent = chunkText;
+            streamContainer.appendChild(chunkElement);
+          };
+
+          // Create a new ReadableStreamDefaultReader object to read the stream chunks
+          const reader = stream.getReader();
+
+          // Read each chunk of data in the stream and display it in the UI
+          const read = () =>
+            reader
+              .read()
+              .then((result) => {
+                if (!result.done) {
+                  handleChunk(result.value);
+                  read();
+                }
+              })
+              .catch((error) => {
+                console.error(error);
+              });
+
+          read();
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>

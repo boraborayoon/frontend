@@ -1,0 +1,35 @@
+      const reader = response.body.getReader;
+      const decoder = new TextDecoder();
+      let chunk = "";
+
+      reader.read().then(function processResult(result) {
+        chunk += decoder.decode(result.value, { stream: true });
+
+        // Split chunk into individual data objects
+        const dataObjects = chunk.split("\n").filter(Boolean);
+        // Process latest data object
+        const latestData = dataObjects[dataObjects.length - 1].replace(
+          /^data: /,
+          ""
+        );
+        if (latestData === "[DONE]") {
+          console.log("Conversation finished");
+          reader.cancel();
+          // add the user's message to the message history
+          result = daveMessage;
+
+          return;
+        }
+
+        //Display Dave's response
+        const jsonData = JSON.parse(latestData);
+        if (jsonData.choices) {
+          // Get content of Dave's response
+          const daveResponse = jsonData.choices[0].delta.content;
+
+          // display Dave's message to the user
+          daveMessage += daveResponse;
+        }
+        // Continue streaming responses
+        reader.read().then(processResult);
+      });
