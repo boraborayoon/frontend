@@ -363,7 +363,7 @@ body .label4image2 {
   display: none;
   position: absolute;
   right: 10px;
-  bottom: 110px;
+  bottom: 100px;
   box-shadow: none;
   background-color: transparent;
   transition: display 0.3s ease-in-out;
@@ -371,7 +371,7 @@ body .label4image2 {
 
 #chat #chat__messages .loading-icon .loading_span {
   font-size: 1rem;
-  padding: 1px 5px;
+  padding: 5px 8px;
   background-color: rgb(169, 144, 126);
   /* padding: 0.5rem; */
   border-radius: 4px;

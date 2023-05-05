@@ -3,10 +3,10 @@ const chatMessages = document.querySelector("#chat__messages");
 const chatForm = document.querySelector("#chat-form");
 const timeTag = document.querySelector(".notice");
 
-// const URL_QUERY = "http://localhost:3000/query";
-const URL_QUERY =
-  // "https://y1bhnss57g.execute-api.us-east-1.amazonaws.com/prod/query";  // US
-  "https://uhe7krif7k.execute-api.ap-northeast-2.amazonaws.com/prod/query"; // KR
+// const URL_QUERY = "http://127.0.0.1:3000/query";
+const URL_QUERY = "https://port-0-aimpawpaw-backend-f69b2mlh9avo22.sel4.cloudtype.app/query";
+// "https://y1bhnss57g.execute-api.us-east-1.amazonaws.com/prod/query";  // US
+// "https://uhe7krif7k.execute-api.ap-northeast-2.amazonaws.com/prod/query"; // KR
 
 const messageChains = [];
 let chatCnt = 0;
