@@ -5,8 +5,6 @@ const timeTag = document.querySelector(".notice");
 
 // const URL_QUERY = "http://127.0.0.1:3000/query";
 const URL_QUERY = "https://port-0-aimpawpaw-backend-f69b2mlh9avo22.sel4.cloudtype.app/query";
-// "https://y1bhnss57g.execute-api.us-east-1.amazonaws.com/prod/query";  // US
-// "https://uhe7krif7k.execute-api.ap-northeast-2.amazonaws.com/prod/query"; // KR
 
 const messageChains = [];
 let chatCnt = 0;
@@ -305,63 +303,6 @@ async function fetchMessage() {
   if (lastMsg !== "") {
     chatInput.value = lastMsg;
   }
-
-  //     const data = await response.json();
-
-  //     botMessage = data.assistant;
-  //     finish_reason = data.finish_reason;
-  //     usage_prompt_tokens = data.usage_prompt_tokens;
-  //     usage_completion_tokens = data.usage_completion_tokens;
-  //     usage_total_tokens = data.usage_total_tokens;
-  //     conversation_id = data.conversation_id;
-
-  //     fullBotMessage += botMessage
-
-  //     debugPrint(`finish_reason:${finish_reason}, usage_prompt_tokens:${usage_prompt_tokens}, usage_completion_tokens:${usage_completion_tokens}, usage_total_tokens:${usage_total_tokens}, conversation_id: ${conversation_id} `)
-  //     const timelap = (Date.now() - startingTime) / 1000
-  //     console.log(`[${timelap}sec] ${finish_reason}: ${botMessage}`)
-
-  //     messageChains.push({ role: 'assistant', content: botMessage });
-
-  //     if (finish_reason === "stop") {
-  //       answerDiv.innerText = fullBotMessage;
-
-  //       console.log("stopped")
-  //       loadingIcon.style.display = "none";
-  //       break
-  //     } else {
-  //       answerDiv.innerText = fullBotMessage + " ...";
-  //       messageChains.push({ role: 'user', content: 'continue' });
-  //       loadingIcon.style.display = "block";
-  //     }
-  //   } catch (e) {
-  //     if (fullBotMessage === "") {
-  //       if (isFirstError) {
-  //         answerDiv.remove()
-  //         addErrorMessage(errorMessage[0]);
-  //         isFirstError = false;
-  //       } else {
-  //         answerDiv.remove()
-  //         addErrorMessage(errorMessage[1]);
-  //       }
-
-  //       lastMsg = messageChains.slice(-1)[0].content;
-  //       break
-  //     }
-  //   }
-
-  //   answerDiv.scrollTop = answerDiv.scrollHeight;
-  // }
-
-
-
-  // // thinkingDiv.remove();
-  // inputDisabled(false);
-  // // chatInput.focus();
-  // if (lastMsg !== "") {
-  //   chatInput.value = lastMsg;
-  // }
-  // return;
 }
 
 const submitForm = async (event) => {
@@ -423,11 +364,7 @@ chatForm.addEventListener("change", (event) => {
     submitForm(event);
   }
 });
-// chatForm.addEventListener("keydown", (event) => {
-//   if (event.keyCode === 13 && !event.shiftKey) {
-//     submitForm(event);
-//   }
-// });
+
 
 function handleFgContainer() {
   const fgContainer = document.querySelector("#fg-container");
