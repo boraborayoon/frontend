@@ -18,7 +18,7 @@ const apm = hh > 12 ? "오후" : "오전";
 const apmHh = hh > 12 ? hh - 12 : hh;
 const min = currentDate.getMinutes();
 
-timeTag.innerText = `${yyyy}년 ${mm}월 ${dd}일 ${apm} ${apmHh}시 ${min}분 에 접속하셨어요.\n- 대화 새로고침은 상단(⬆️)의 AIm PawPaw를 클릭하세요.\n- 앱 정보보기는 오른쪽 위(↗️)에 있는 발바닥 클릭하세요.`;
+timeTag.innerText = `${yyyy}년 ${mm}월 ${dd}일 ${apm} ${apmHh}시 ${min}분 에 접속하셨어요.\n- 대화 새로고침은 상단(↑)의 AIm PawPaw를 클릭하세요.\n- 앱 정보보기는 오른쪽 위(↗)에 있는 발바닥 클릭하세요.`;
 
 const chatInput = document.querySelector(".chat-input");
 const chatSelectSpecies = document.querySelector(".chat-select-species");
@@ -73,7 +73,7 @@ async function main() {
 
     selectInputType(0);
     const message =
-      "집사님! 기존에 입력하신 반려동물의 정보를 확인해습니다. 아래 기존 정보를 그대로 사용할까요?";
+      "집사님! 기존에 입력하신 반려동물의 정보를 확인했습니다. 아래 정보를 그대로 사용할까요?";
     await createMessage(message, "assistant");
     await createMessage(`"${preUserMessageCached}"`, "assistant");
   } else {
@@ -154,7 +154,7 @@ function inputDisabled(isDisable) {
     //Enable
     chatInput.disabled = false;
     chatInput.placeholder =
-      "여기에 질문을 입력하신 후에 오른쪽 [보내기] 버튼을 클릭해 주세요~ ^^";
+      "여기에 질문을 입력하신 후, 오른쪽 [보내기] 버튼을 클릭해 주세요~ ^^";
     chatInput.style.backgroundColor = "white";
     inputButton.disabled = false;
     inputButton.style.color = "rgb(200, 200, 200)";
@@ -240,7 +240,7 @@ async function showAssistantFetching() {
 }
 
 const errorMessage = [
-  "어이쿠.. 😅\n 답변을 생성하다가 이유를 모를 문제가 발생했어요. 죄송하지만 한 번더 시도해 보시겠어요? 🥺.",
+  "어이쿠.. 😅\n 답변을 생성하다가 문제가 발생했어요. 죄송하지만 한 번더 시도해 보시겠어요? 🥺.",
   "헉.. 에러가 또 발생했네요.. 😢😢😢.",
 ];
 // let isFirstError = true;
