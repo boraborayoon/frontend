@@ -18,7 +18,7 @@ const apm = hh > 12 ? "오후" : "오전";
 const apmHh = hh > 12 ? hh - 12 : hh;
 const min = currentDate.getMinutes();
 
-timeTag.innerText = `${yyyy}년 ${mm}월 ${dd}일 ${apm} ${apmHh}시 ${min}분 에 접속하셨어요.\n- 대화 새로고침은 상단(⬆️)의 AIm PawPaw를 클릭하세요.\n- 앱 정보보기는 오른쪽 위(↗️)에 있는 발바닥 클릭하세요.`;
+timeTag.innerText = `${yyyy}년 ${mm}월 ${dd}일 ${apm} ${apmHh}시 ${min}분 에 접속하셨어요.\n- 대화 새로고침은 상단(↑)의 AIm PawPaw를 클릭하세요.\n- 앱 정보보기는 오른쪽 위(↗)에 있는 발바닥 클릭하세요.`;
 
 const chatInput = document.querySelector(".chat-input");
 const chatSelectSpecies = document.querySelector(".chat-select-species");
