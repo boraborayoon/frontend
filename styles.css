@@ -294,7 +294,7 @@ body .label4image2 {
   margin: 0 auto;
 }
 
-#chat #chat__messages *:not(.time) {
+#chat #chat__messages *:not(.notice) {
   padding: 0.8rem 1rem;
   min-height: 2.25rem;
   width: fit-content;
