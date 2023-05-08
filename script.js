@@ -254,11 +254,13 @@ async function fetchMessage() {
 
   if (messageChains.length > 5) {
     requestMessage = [messageChains[0], ...messageChains.slice(-3)];
+
   } else {
     requestMessage = messageChains;
   }
 
-  console.log(requestMessage);
+  console.log(`[messageChains]\n`, messageChains);
+  console.log(`[requestMessage]\n`, requestMessageChains);
 
   bodyData = JSON.stringify({ messageChains: [...messageChains] });
 
