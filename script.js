@@ -260,7 +260,7 @@ async function fetchMessage() {
   }
 
   console.log(`[messageChains]\n`, messageChains);
-  console.log(`[requestMessage]\n`, requestMessageChains);
+  console.log(`[requestMessage]\n`, requestMessage);
 
   bodyData = JSON.stringify({ messageChains: [...messageChains] });
 
