@@ -244,7 +244,7 @@ const errorMessage = [
   "헉.. 에러가 또 발생했네요.. 😢😢😢.",
 ];
 // let isFirstError = true;
-let lasMsg = ""
+let lastMsg = ""
 async function fetchMessage() {
   const answerDiv = await showAssistantFetching();
   const loadingIcon = document.querySelector(".loading-icon")
