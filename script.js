@@ -51,6 +51,7 @@ const chatSelectYesNo = document.querySelector(".chat-select-yesno");
 let chatEventInput = chatSelectYesNo;
 
 function debugPrint() {
+  return;
   let txt = "[DEBUG] ";
   const argsArray = Array.from(arguments);
   argsArray.forEach((arg) => {
