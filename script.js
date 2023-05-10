@@ -51,6 +51,7 @@ const chatSelectYesNo = document.querySelector(".chat-select-yesno");
 let chatEventInput = chatSelectYesNo;
 
 function debugPrint() {
+  return;
   let txt = "[DEBUG] ";
   const argsArray = Array.from(arguments);
   argsArray.forEach((arg) => {
@@ -244,7 +245,7 @@ const errorMessage = [
   "헉.. 에러가 또 발생했네요.. 😢😢😢.",
 ];
 // let isFirstError = true;
-let lasMsg = ""
+let lastMsg = ""
 async function fetchMessage() {
   const answerDiv = await showAssistantFetching();
   const loadingIcon = document.querySelector(".loading-icon")
@@ -254,11 +255,13 @@ async function fetchMessage() {
 
   if (messageChains.length > 5) {
     requestMessage = [messageChains[0], ...messageChains.slice(-3)];
+
   } else {
     requestMessage = messageChains;
   }
 
-  console.log(requestMessage);
+  console.log(`[messageChains]\n`, messageChains);
+  console.log(`[requestMessage]\n`, requestMessage);
 
   bodyData = JSON.stringify({ messageChains: [...messageChains] });
 
