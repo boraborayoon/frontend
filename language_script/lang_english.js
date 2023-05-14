@@ -59,13 +59,13 @@ const refreshButtonMessageNo = document.getElementById("refresh_button_no")
 refreshButtonMessageNo.innerText = "No!"
 
 const refreshLanguageMessageElement = document.getElementById("refresh_language_message")
-refreshLanguageMessageElement.innerText = "It switchs the language to Korean. Please note that after the change, all records of inquiries made in English will be removed. \n 한국어로 언어를 변경합니다. 변경 후에는 영어로 문의한 기록이 모두 제거 됩니다."
+refreshLanguageMessageElement.innerText = "It switchs the language to Korean. Please note that after the change, all records of inquiries made in English will be removed."
 
 const refreshLanguageButtonMessageYes = document.getElementById("refresh_lang_button_yes")
-refreshLanguageButtonMessageYes.innerText = "Yes, go ahead!\n네 변경해주세요!"
+refreshLanguageButtonMessageYes.innerText = "Yes, go ahead!"
 
 const refreshLanguageButtonMessageNo = document.getElementById("refresh_lang_button_no")
-refreshLanguageButtonMessageNo.innerText = "No thanks.\n아니요. 취소할래요."
+refreshLanguageButtonMessageNo.innerText = "No, bring me back."
 
 
 const chatInputElement = document.getElementById("chat_input")
@@ -99,50 +99,50 @@ const opt30Element = document.getElementById("opt30")
 opt30Element.innerText = "Determine your pet's age"
 
 const opt31Element = document.getElementById("opt31")
-opt31Element.value = "under a year old"
+opt31Element.value = ", under a year old"
 opt31Element.innerText = "under a year old"
 
 const opt32Element = document.getElementById("opt32")
-opt32Element.value = "1~4 years old"
+opt32Element.value = ", 1~4 years old"
 opt32Element.innerText = "1~4 years old"
 
 const opt33Element = document.getElementById("opt33")
-opt33Element.value = "5~9 years old"
+opt33Element.value = ", 5~9 years old"
 opt33Element.innerText = "5~9 years old"
 
 const opt34Element = document.getElementById("opt34")
-opt34Element.value = "10~14 years old"
+opt34Element.value = ", 10~14 years old"
 opt34Element.innerText = "10~14 years old"
 
 const opt35Element = document.getElementById("opt35")
-opt35Element.value = "over 15 years old"
+opt35Element.value = ", over 15 years old"
 opt35Element.innerText = "over 15 years old"
 
 const opt40Element = document.getElementById("opt40")
 opt40Element.innerText = "Choose your pet's weight."
 
 const opt41Element = document.getElementById("opt41")
-opt41Element.value = "less than 1kg"
+opt41Element.value = ", less than 1kg"
 opt41Element.innerText = "less than 1kg or 2.2lb"
 
 const opt42Element = document.getElementById("opt42")
-opt42Element.value = "between 1~5kg"
+opt42Element.value = ", between 1~5kg"
 opt42Element.innerText = "between 1~5kg or 2~11lb"
 
 const opt43Element = document.getElementById("opt43")
-opt43Element.value = "between 5~10kg"
+opt43Element.value = ", between 5~10kg"
 opt43Element.innerText = "between 5~10kg or 11~22lb"
 
 const opt44Element = document.getElementById("opt44")
-opt44Element.value = "between 10~18kg"
+opt44Element.value = ", between 10~18kg"
 opt44Element.innerText = "between 10~18kg or 22~40lb"
 
 const opt45Element = document.getElementById("opt45")
-opt45Element.value = "between 18~25kg"
+opt45Element.value = ", between 18~25kg"
 opt45Element.innerText = "between 18~25kg or 40~55lb"
 
 const opt46Element = document.getElementById("opt46")
-opt46Element.value = "more than 25kg"
+opt46Element.value = ", more than 25kg"
 opt46Element.innerText = "more than 25kg or 55lb"
 
 
@@ -150,11 +150,11 @@ const opt50Element = document.getElementById("opt50")
 opt50Element.innerText = "Status of neutering surgery on your pet"
 
 const opt51Element = document.getElementById("opt51")
-opt51Element.value = "had a neutering operation"
+opt51Element.value = "and had a neutering operation"
 opt51Element.innerText = "had a neutering operation"
 
 const opt52Element = document.getElementById("opt52")
-opt52Element.value = "naver had a neutering operation"
+opt52Element.value = "and never had a neutering operation"
 opt52Element.innerText = "never had a neutering operation"
 
 const opt90Element = document.getElementById("opt90")
@@ -517,7 +517,7 @@ const submitForm = async (event) => {
         preMessageIdx = 1;
       }
     } else {
-      preUserMessage += message + ", ";
+      preUserMessage += message + " ";
       preMessageIdx++;
       await addPreMessageAssistant(preMessageIdx);
     }
