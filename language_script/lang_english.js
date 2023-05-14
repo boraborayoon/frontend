@@ -94,11 +94,11 @@ const opt20Element = document.getElementById("opt10")
 opt20Element.innerText = "Choose the gender of your furry friend."
 
 const opt21Element = document.getElementById("opt11")
-opt21Element.value = "a boy"
+opt21Element.value = "who is a boy"
 opt21Element.innerText = "a boy"
 
 const opt22Element = document.getElementById("opt12")
-opt22Element.value = "a girl"
+opt22Element.value = "who is a girl"
 opt22Element.innerText = "a girl"
 
 const opt30Element = document.getElementById("opt30")
@@ -117,8 +117,8 @@ opt33Element.value = "5~9 years old"
 opt33Element.innerText = "5~9 years old"
 
 const opt34Element = document.getElementById("opt34")
-opt34Element.value = "나이는 10~14살 사이입니다."
-opt34Element.innerText = "10~14살 사이입니다."
+opt34Element.value = "10~14 years old"
+opt34Element.innerText = "10~14 years old"
 
 const opt35Element = document.getElementById("opt35")
 opt35Element.value = "over 15 years old"
@@ -208,7 +208,7 @@ const inputButton = document.querySelector(".input-button");
 
 
 let preMessageIdx = 1;
-let preUserMessage = "우리 애는 ";
+let preUserMessage = "";
 const preMessage = [
   "Hey there! 👋 I'm your friendly AI messenger, 'Aim PawPaw'. I'm here to help you with any questions you have about pets. But before we dive in, I have few questionnaire about your furry friend (🐶/🐱). 😆 Let's get started, shall we?",
   "The first question~ Is your pet a puppy? Is it a cat?",
@@ -221,9 +221,9 @@ const preMessage = [
 let conversation_id = null;
 
 // Get the user's preference
-var preUserMessageCached = localStorage.getItem("preUserMessageCached");
-var preUserMessageCached_V = localStorage.getItem("preUserMessageCached_V");
-const preUserMessageCached_currentV = "20230502A";
+var preUserMessageCached = localStorage.getItem("aimpawpaw.preUserMessageCached");
+var preUserMessageCached_V = localStorage.getItem("aimpawpaw.preUserMessageCached_V");
+const preUserMessageCached_currentV = "20230514E";
 
 const chatSelectYesNo = document.querySelector(".chat-select-yesno");
 let chatEventInput = chatSelectYesNo;
@@ -308,9 +308,9 @@ async function addPreMessageAssistant(idx) {
 
   if (idx === preMessage.length - 1) {
     messageChains.push({ role: "user", content: preUserMessage });
-    localStorage.setItem("preUserMessageCached", preUserMessage);
+    localStorage.setItem("aimpawpaw.preUserMessageCached", preUserMessage);
     localStorage.setItem(
-      "preUserMessageCached_V",
+      "aimpawpaw.preUserMessageCached_V",
       preUserMessageCached_currentV
     );
   }
@@ -440,7 +440,7 @@ async function fetchMessage() {
   console.log(`[messageChains]\n`, messageChains);
   console.log(`[requestMessage]\n`, requestMessage);
 
-  bodyData = JSON.stringify({ messageChains: [...messageChains] });
+  bodyData = JSON.stringify({ language: "en" }, { messageChains: [...messageChains] });
 
   const response = await fetch(URL_QUERY, {
     method: "POST",
@@ -514,7 +514,7 @@ const submitForm = async (event) => {
     await addPreMessageUser(message);
 
     if (chatEventInput.isEqualNode(chatSelectYesNo)) {
-      if (message.substring(0, 1) === "예") {
+      if (message.substring(0, 1) === "Y") {
         preUserMessage = preUserMessageCached;
         preMessageIdx = preMessage.length - 1;
         await addPreMessageAssistant(preMessageIdx);
@@ -523,7 +523,7 @@ const submitForm = async (event) => {
         preMessageIdx = 1;
       }
     } else {
-      preUserMessage += message + " ";
+      preUserMessage += message + ", ";
       preMessageIdx++;
       await addPreMessageAssistant(preMessageIdx);
     }

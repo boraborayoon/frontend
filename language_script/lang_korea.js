@@ -209,9 +209,9 @@ const preMessage = [
 let conversation_id = null;
 
 // Get the user's preference
-var preUserMessageCached = localStorage.getItem("preUserMessageCached");
-var preUserMessageCached_V = localStorage.getItem("preUserMessageCached_V");
-const preUserMessageCached_currentV = "20230502A";
+var preUserMessageCached = localStorage.getItem("aimpawpaw.preUserMessageCached");
+var preUserMessageCached_V = localStorage.getItem("aimpawpaw.preUserMessageCached_V");
+const preUserMessageCached_currentV = "20230514K";
 
 const chatSelectYesNo = document.querySelector(".chat-select-yesno");
 let chatEventInput = chatSelectYesNo;
@@ -296,9 +296,9 @@ async function addPreMessageAssistant(idx) {
 
   if (idx === preMessage.length - 1) {
     messageChains.push({ role: "user", content: preUserMessage });
-    localStorage.setItem("preUserMessageCached", preUserMessage);
+    localStorage.setItem("aimpawpaw.preUserMessageCached", preUserMessage);
     localStorage.setItem(
-      "preUserMessageCached_V",
+      "aimpawpaw.preUserMessageCached_V",
       preUserMessageCached_currentV
     );
   }
@@ -429,7 +429,7 @@ async function fetchMessage() {
   console.log(`[messageChains]\n`, messageChains);
   console.log(`[requestMessage]\n`, requestMessage);
 
-  bodyData = JSON.stringify({ messageChains: [...messageChains] });
+  bodyData = JSON.stringify({ language: "kr" }, { messageChains: [...messageChains] });
 
   const response = await fetch(URL_QUERY, {
     method: "POST",
