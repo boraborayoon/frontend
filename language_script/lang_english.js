@@ -175,8 +175,8 @@ const chatMessages = document.querySelector("#chat__messages");
 const chatForm = document.querySelector("#chat-form");
 const timeTag = document.querySelector(".notice");
 
-const URL_QUERY = "http://127.0.0.1:3000/query";
-// const URL_QUERY = "https://port-0-aimpawpaw-backend-f69b2mlh9avo22.sel4.cloudtype.app/query";
+// const URL_QUERY = "http://127.0.0.1:3000/query";
+const URL_QUERY = "https://port-0-aimpawpaw-backend-f69b2mlh9avo22.sel4.cloudtype.app/query";
 
 const messageChains = [];
 let chatCnt = 0;
