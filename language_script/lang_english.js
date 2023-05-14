@@ -76,11 +76,11 @@ const opt10Element = document.getElementById("opt10")
 opt10Element.innerText = "Select a pet species."
 
 const opt11Element = document.getElementById("opt11")
-opt11Element.value = "I have the cutest puppy"
-opt11Element.innerText = "A puppy as my pet!"
+opt11Element.value = "I have a lovely dog"
+opt11Element.innerText = "A dog as my pet!"
 
 const opt12Element = document.getElementById("opt12")
-opt12Element.value = "I have the cutest cat"
+opt12Element.value = "I have a lovely cat"
 opt12Element.innerText = "A cat as my pet!"
 
 
@@ -205,7 +205,7 @@ let preMessageIdx = 1;
 let preUserMessage = "";
 const preMessage = [
   "Hey there! 👋 I'm your friendly AI messenger, 'Aim PawPaw'. I'm here to help you with any questions you have about pets. But before we dive in, I have few questionnaire about your furry friend (🐶/🐱). 😆 Let's get started, shall we?",
-  "The first question~ Is your pet a puppy or a cat?",
+  "The first question~ Is your pet a dog or a cat?",
   "Could you please let us know the gender of your pet?",
   "Here comes question number three! 😊 May I know how old your furry friend is?",
   "Could you please provide the weight of your pet?",
