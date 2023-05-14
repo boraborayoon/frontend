@@ -18,7 +18,7 @@ html {
   font-family: "Roboto", "Noto Sans KR", sans-serif;
 }
 
-#loading-icon {
+#main-loading-icon {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -34,7 +34,7 @@ html {
   background-color: rgb(243, 222, 186);
 }
 
-#loading-icon.hidden {
+#main-loading-icon.hidden {
   display: none;
 }
 
@@ -419,7 +419,7 @@ body .label4image2 {
   display: none;
   position: absolute;
   right: 10px;
-  bottom: 100px;
+  bottom: 130px;
   box-shadow: none;
   background-color: transparent;
   transition: display 0.3s ease-in-out;
