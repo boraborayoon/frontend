@@ -53,17 +53,17 @@ const refreshButtonMessageNo = document.getElementById("refresh_button_no")
 refreshButtonMessageNo.innerText = "아니요!"
 
 const refreshLanguageMessageElement = document.getElementById("refresh_language_message")
-refreshLanguageMessageElement.innerText = "If you change language setting, all the dialog will be refreshed. Are you sure to change language setting?"
+refreshLanguageMessageElement.innerText = "It switchs the language to English. Please note that after the change, all records of inquiries made in Korean will be removed. \n 영어로 언어를 변경합니다. 변경 후에는 한국어로 문의한 기록이 모두 제거 됩니다."
 
 const refreshLanguageButtonMessageYes = document.getElementById("refresh_lang_button_yes")
-refreshLanguageButtonMessageYes.innerText = "Yes, Change it!"
+refreshLanguageButtonMessageYes.innerText = "Yes, go ahead!\n네 변경해주세요!"
 
 const refreshLanguageButtonMessageNo = document.getElementById("refresh_lang_button_no")
-refreshLanguageButtonMessageNo.innerText = "No, Return me!"
+refreshLanguageButtonMessageNo.innerText = "No thanks.\n아니요. 취소할래요."
 
 
 const chatInputElement = document.getElementById("chat_input")
-const inputBoxPlaceholder = inputBoxPlaceholder
+const inputBoxPlaceholder = "여기에 질문을 입력하신 후, 오른쪽 [보내기] 버튼을 클릭해 주세요~ ^^ (최대 100글자)"
 chatInputElement.placeholder = inputBoxPlaceholder
 
 const opt10Element = document.getElementById("opt10")
@@ -78,14 +78,14 @@ opt12Element.value = "고양이입니다."
 opt12Element.innerText = "고양이입니다."
 
 
-const opt20Element = document.getElementById("opt10")
+const opt20Element = document.getElementById("opt20")
 opt20Element.innerText = "반려동물의 성별을 선택해 주세요."
 
-const opt21Element = document.getElementById("opt11")
+const opt21Element = document.getElementById("opt21")
 opt21Element.value = "남자입니다."
 opt21Element.innerText = "우리 아이는 남자입니다."
 
-const opt22Element = document.getElementById("opt12")
+const opt22Element = document.getElementById("opt22")
 opt22Element.value = "여자입니다."
 opt22Element.innerText = "우리 아이는 여자입니다."
 
@@ -184,7 +184,7 @@ const apm = hh > 12 ? "오후" : "오전";
 const apmHh = hh > 12 ? hh - 12 : hh;
 const min = currentDate.getMinutes();
 
-timeTag.innerText = `${yyyy}년 ${mm}월 ${dd}일 ${apm} ${apmHh}시 ${min}분 에 접속하셨어요.\n- 대화 새로고침은 상단(↑)의 AIm PawPaw를 클릭하세요.\n- 앱 정보보기는 오른쪽 위(↗)에 있는 발바닥 클릭하세요.`;
+timeTag.innerText = `${yyyy}년 ${mm}월 ${dd}일 ${apm} ${apmHh}시 ${min}분 에 접속하셨어요.`;
 
 const chatInput = document.querySelector(".chat-input");
 const chatSelectSpecies = document.querySelector(".chat-select-species");
@@ -320,8 +320,7 @@ function inputDisabled(isDisable) {
   } else {
     //Enable
     chatInput.disabled = false;
-    chatInput.placeholder =
-      "여기에 질문을 입력하신 후, 오른쪽 [보내기] 버튼을 클릭해 주세요~ ^^";
+    chatInput.placeholder = inputBoxPlaceholder;
     chatInput.style.backgroundColor = "white";
     inputButton.disabled = false;
     inputButton.style.color = "rgb(200, 200, 200)";
@@ -556,6 +555,6 @@ function handleLanguage() {
 
 function changeLanguage() {
   localStorage.setItem("aimpawpaw.language", "en");
-  location.reload();
+  window.location.reload();
 }
 

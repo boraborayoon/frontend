@@ -32,10 +32,6 @@
     <div id="container">
       <div id="fg-container">
         <span id="close-button" class="fg-closeButton" onclick="handleFgContainer()">$$</span>
-        <p id="language_button" class="language-button" onclick="handleLanguage()"><i class=" fa-solid fa-globe"></i>
-          &nbsp;&nbsp;For English service,
-          Click here!
-        </p>
         <section class="fg-message">
 
           <h2 id="intro-title">$$ </h2>
@@ -55,7 +51,7 @@
               aria-hidden="true"></i><i id="icon" class="fa fa-cat fa-flip" aria-hidden="true"></i></div>
           <p id="refresh_message">$$</p>
           <br>
-          <span id="refresh_button_yes" class="button-yes" onclick="location.reload()">$$</span>
+          <span id="refresh_button_yes" class="button-yes" onclick="window.location.reload()">$$</span>
           <span id="refresh_button_no" class="button-no" onclick="handleRefreshChecker()">$$</span>
         </div>
       </div>
@@ -80,11 +76,13 @@
           <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
         </div>
         <header id="bar">
-          <p class="title" onclick="handleRefreshChecker()" ontouchstart="handleRefreshChecker()">
+          <p class="title">
             AIm PawPaw
           </p>
-          <p class="subtitle">AI Messenger for Pet Pals</p>
-          <i class="fa fa-paw" aria-hidden="true" onclick="handleFgContainer()" ontouchstart="handleFgContainer()"></i>
+          <p class="title__sub">
+            AI Messenger for Pet Pals
+          </p>
+          <i class="fa fa-paw" aria-hidden="true"></i>
           <p class="label4image">Header bgImage by Freepik <a
               href="https://www.freepik.com/free-vector/hand-drawn-pet-sitting-facebook-cover_32874038.htm#query=pets&position=1&from_view=search&track=sph#position=1&query=pets"><i
                 class="fa fa-link" aria-hidden="true"></i>
@@ -163,11 +161,21 @@
             <!-- <button id="chat-submit" type="submit">입력완료</button> -->
           </form>
         </section>
+        <footer id="menubar">
+          <i class="fa-solid fa-globe" onclick="handleLanguage()"></i>
+          <span>|</span>
+          <i class=" fa-solid fa-rotate-right" onclick="handleRefreshChecker()"></i>
+          <span>|</span>
+          <i class="fa-solid fa-circle-info" onclick="handleFgContainer()"></i>
+        </footer>
       </div>
     </div>
+
   </div>
 </body>
 <script>
+  let langMode = ""
+
   document.addEventListener('DOMContentLoaded', () => {
     const loadingIcon = document.querySelector('#loading-icon');
     const contentDiv = document.querySelector('#content-div');
@@ -182,12 +190,13 @@
 
   const updateLanguage = () => {
     const userLanguage = navigator.language || navigator.userLanguage;
-    const languageSetting = localStorage.getItem("aimpawpaw.language", "ko") || "";
+    const languageSetting = localStorage.getItem("aimpawpaw.language") || "";
 
     if ((languageSetting === "" && userLanguage.startsWith("ko")) || (languageSetting === "ko")) {
-      console.log("ko called")
+      langMode = "ko"
       importScript("./language_script/lang_korea.js")
     } else {
+      langMode = "en"
       importScript("./language_script/lang_english.js")
     }
   }

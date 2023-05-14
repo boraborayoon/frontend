@@ -6,13 +6,11 @@ introTitleElement.innerText = "Prologue";
 
 const introElement = document.getElementById("intro")
 introElement.innerHTML = `
-Hello, Pet Pals! 👋 I'm a guy who is lucky to have the most adorable companion named Bella~😃 <br> While taking care of Bella, I often find myself in situations where I need to visit animal hospitals for various reasons. However, I understand that not everyone can easily go to the hospital when they need to. Have you ever been in that situation? It can be quite challenging to navigate through such circumstances. When it happens to me, I usually resort to searching online or reaching out to friends, but honestly, it can get quite confusing at times. That's when I thought to myself, "What if there was a solution...?" Lately, there's been a trending solution that caught my attention!
+Hello, Pet Pals! 👋 I'm a lucky guy who has the most adorable companion named Bella~😃 Taking care of Bella often means visiting animal hospitals for various reasons. But I understand that not everyone can easily go to the hospital when needed. Ever been in that situation? It can be tough to navigate! So, I thought, "What if there was a solution...?" Recently, I discovered a trending solution!
 
-I decided to seek advice for Bella's queries using the ever-helpful <span style="color:darksegreen">ChatGPT</span>. And guess what? The responses were absolutely fantastic!👍 It provided me with clear and concise answers that left me impressed!🥹
+I tried seeking advice for Bella using the ever-helpful <span style = 'color:darksegreen'>ChatGPT</span>. And wow! The responses were fantastic!👍 Clear and concise answers that left me impressed!🥹
 
-So, I wanted to extend my assistance to fellow pet owners, and that's why I created an app specifically designed to make their lives easier. My hope is that this app can provide a little extra support to all the pet owners out there who deeply care for their furry companions.
-
-Are you ready to join me on this exciting journey? 😂
+That's why I created this app for fellow pet owners, aiming to make their lives easier.<br><br> Join me on this exciting journey! 😂
 `
 
 const qnaElement = document.getElementById("qna")
@@ -20,19 +18,15 @@ qnaElement.innerHTML = `
 <p style="text-align:center">More information for AimPawPaw?</p>
           <details>
             <summary>Saving Conversation.</summary>
-            <p>We want you to know that your privacy and security are of utmost importance to us. Rest assured that when you engage in conversations within the app, we prioritize the protection of your personal information. While we do keep a record of the inquiries and answers related to your beloved pets, we do not store any personal information such as your access equipment details or IP information. Our primary focus is on improving our services and ensuring a seamless experience for you and your furry friends.
-
-            So, feel free to ask any questions, seek advice, or share your concerns with us. Your feedback plays a vital role in helping us enhance our app and cater to your specific needs. We appreciate your trust in us and look forward to assisting you every step of the way.
-            
-            Get ready to embark on a delightful journey with our pet-friendly app! 😅</p>
+            <p>Your privacy and security are our top priorities. When using our app, rest assured that we prioritize the protection of your personal information. We keep a record of pet-related inquiries and answers, but we don't store any personal details like access equipment or IP information. Our focus is on improving our services and providing a seamless experience for you and your furry friends. Thank you for trusting us and joining us on this delightful journey with our pet-friendly app! 😄</p>
           </details>
           <details>
             <summary>Advertising Support.</summary>
-            <p>To ensure the smooth operation of our app, there are certain costs involved, such as server operation fees and Chat GPT usage fees. In order to cover these expenses, we rely on advertising support.
+            <p>To keep our app running smoothly, we have server and Chat GPT usage costs. We rely on advertising to cover these expenses.
 
-            We kindly ask for your understanding in this matter. By allowing advertisements, we can continue to provide you with a delightful and user-friendly experience. Rest assured that we strive to strike a balance between offering valuable content and ensuring a pleasant app usage for you.
+            We kindly ask for your understanding and support. By allowing ads, we can maintain a delightful and user-friendly experience. We strive to provide valuable content while ensuring an enjoyable app usage for you.
             
-            Thank you for your understanding and support! We truly appreciate having you as a part of our community. Let's make this app even more amazing together! 😄</p>
+            Thank you for your support! We appreciate you being part of our community. Let's make this app even more amazing together! 😄</p>
           </details>
           <details>
             <summary>Origin of Images</summary>
@@ -65,39 +59,39 @@ const refreshButtonMessageNo = document.getElementById("refresh_button_no")
 refreshButtonMessageNo.innerText = "No!"
 
 const refreshLanguageMessageElement = document.getElementById("refresh_language_message")
-refreshLanguageMessageElement.innerText = "언어를 변경하면, 문의하셨던 모든 기록이 제거 됩니다. 그래도 변경하시겠어요?"
+refreshLanguageMessageElement.innerText = "It switchs the language to Korean. Please note that after the change, all records of inquiries made in English will be removed. \n 한국어로 언어를 변경합니다. 변경 후에는 영어로 문의한 기록이 모두 제거 됩니다."
 
 const refreshLanguageButtonMessageYes = document.getElementById("refresh_lang_button_yes")
-refreshLanguageButtonMessageYes.innerText = "네 변경해주세요!"
+refreshLanguageButtonMessageYes.innerText = "Yes, go ahead!\n네 변경해주세요!"
 
 const refreshLanguageButtonMessageNo = document.getElementById("refresh_lang_button_no")
-refreshLanguageButtonMessageNo.innerText = "No, Return me!"
+refreshLanguageButtonMessageNo.innerText = "No thanks.\n아니요. 취소할래요."
 
 
 const chatInputElement = document.getElementById("chat_input")
-const inputBoxPlaceholder = "Just type in your questions here and hit that friendly little button on the right."
+const inputBoxPlaceholder = "Just type in your questions here and hit that flight button on the right(max: 100 characters)."
 chatInputElement.placeholder = inputBoxPlaceholder
 
 const opt10Element = document.getElementById("opt10")
 opt10Element.innerText = "Select a pet species."
 
 const opt11Element = document.getElementById("opt11")
-opt11Element.value = "I have the cutest dog"
-opt11Element.innerText = "A dog as my pet!"
+opt11Element.value = "I have the cutest puppy"
+opt11Element.innerText = "A puppy as my pet!"
 
 const opt12Element = document.getElementById("opt12")
 opt12Element.value = "I have the cutest cat"
 opt12Element.innerText = "A cat as my pet!"
 
 
-const opt20Element = document.getElementById("opt10")
+const opt20Element = document.getElementById("opt20")
 opt20Element.innerText = "Choose the gender of your furry friend."
 
-const opt21Element = document.getElementById("opt11")
+const opt21Element = document.getElementById("opt21")
 opt21Element.value = "who is a boy"
 opt21Element.innerText = "a boy"
 
-const opt22Element = document.getElementById("opt12")
+const opt22Element = document.getElementById("opt22")
 opt22Element.value = "who is a girl"
 opt22Element.innerText = "a girl"
 
@@ -192,11 +186,11 @@ const yyyy = currentDate.getFullYear();
 const mm = currentDate.getMonth() + 1;
 const dd = currentDate.getDate();
 const hh = currentDate.getHours();
-const apm = hh > 12 ? "오후" : "오전";
+const apm = hh > 12 ? "PM" : "AM";
 const apmHh = hh > 12 ? hh - 12 : hh;
 const min = currentDate.getMinutes();
 
-timeTag.innerText = `You've connected at ${yyyy}-${mm}-${dd} ${apm} ${apmHh}:${min}.\n- If you want to refresh converation, please click the text AIm PawPaw at the top(↑)\n- If you want more information or change language about this app please click the paw icon at the right-top(↗)`;
+timeTag.innerText = `You've connected at ${yyyy}-${mm}-${dd} ${apm} ${apmHh}:${min}`;
 
 const chatInput = document.querySelector(".chat-input");
 const chatSelectSpecies = document.querySelector(".chat-select-species");
@@ -211,7 +205,7 @@ let preMessageIdx = 1;
 let preUserMessage = "";
 const preMessage = [
   "Hey there! 👋 I'm your friendly AI messenger, 'Aim PawPaw'. I'm here to help you with any questions you have about pets. But before we dive in, I have few questionnaire about your furry friend (🐶/🐱). 😆 Let's get started, shall we?",
-  "The first question~ Is your pet a puppy? Is it a cat?",
+  "The first question~ Is your pet a puppy or a cat?",
   "Could you please let us know the gender of your pet?",
   "Here comes question number three! 😊 May I know how old your furry friend is?",
   "Could you please provide the weight of your pet?",
@@ -252,7 +246,7 @@ async function main() {
 
     selectInputType(0);
     const message =
-      "Great news! I've reviewed the information you provided for your pet. Can we go ahead and use the same information?";
+      "Great news! I found the information you provided for your pet. Can we go ahead and use the same information below?";
     await createMessage(message, "assistant");
     await createMessage(`"${preUserMessageCached}"`, "assistant");
   } else {
@@ -566,7 +560,7 @@ function handleLanguage() {
 }
 
 function changeLanguage() {
-  localStorage.setItem("aimpawpaw.language", "en");
-  location.reload();
+  localStorage.setItem("aimpawpaw.language", "ko");
+  window.location.reload();
 }
 
