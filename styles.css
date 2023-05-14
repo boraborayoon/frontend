@@ -12,6 +12,34 @@ html {
   box-sizing: border-box;
   background-image: url("./images/pawbgimg.jpg");
 }
+/* 
+* {
+  box-sizing: border-box;
+} */
+
+#loading-icon {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  color: rgb(103, 93, 80);
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(243, 222, 186);
+}
+
+#loading-icon.hidden {
+  display: none;
+}
+
+#content-div {
+  display: none;
+}
 
 #container {
   width: 100%;
@@ -33,6 +61,29 @@ html {
   background-color: rgba(103, 93, 80, 0.9);
   color: rgb(210, 210, 210);
   display: none;
+}
+
+#fg-container .language-button {
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  padding: 5px;
+  text-align: center;
+  height: 1.5rem;
+  border-radius: 10px;
+  background-color: rgb(169, 144, 126);
+  color: rgb(230, 230, 230);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  transition: color, background-color, 0.3s ease-in-out;
+}
+
+#fg-container .language-button:hover {
+  cursor: pointer;
 }
 
 #fg-container .fg-closeButton {
@@ -114,7 +165,8 @@ html {
 /**** end: fg-container style ****/
 
 /**** start - refresh chekter window style ****/
-#refresh-checker {
+#refresh-checker,
+#refresh-for-language {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -124,7 +176,8 @@ html {
   display: none;
 }
 
-#refresh-checker .message {
+#refresh-checker .message,
+#refresh-for-language .message {
   box-sizing: border-box;
   position: absolute;
   left: 50%;
@@ -140,12 +193,14 @@ html {
   border-radius: 20px;
 }
 
-#refresh-checker .message #icon {
+#refresh-checker .message #icon,
+#refresh-for-language .message #icon {
   color: tomato;
   font-size: 3rem;
 }
 
-#refresh-checker .message span {
+#refresh-checker .message span,
+#refresh-for-language .message span {
   width: 10rem;
   /* height: 1.5rem; */
   text-align: center;
@@ -155,15 +210,18 @@ html {
   background-color: gray;
 }
 
-#refresh-checker .message span:hover {
+#refresh-checker .message span:hover,
+#refresh-for-language .message span:hover {
   cursor: pointer;
 }
 
-#refresh-checker .message .button-yes {
+#refresh-checker .message .button-yes,
+#refresh-for-language .message .button-yes {
   background-color: coral;
 }
 
-#refresh-checker .message .button-no {
+#refresh-checker .message .button-no,
+#refresh-for-language .message .button-no {
   background-color: #448ee4;
 }
 
