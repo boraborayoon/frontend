@@ -31,7 +31,8 @@
           class="fa fa-link" aria-hidden="true"></i></a></div>
     <div id="container">
       <div id="fg-container">
-        <span id="close-button" class="fg-closeButton" onclick="handleFgContainer()">$$</span>
+        <span id="close-button" class="fg-closeButton" ontouchstart="handleFgContainer()"
+          onclick="handleFgContainer()">$$</span>
         <section class="fg-message">
 
           <h2 id="intro-title">$$ </h2>
@@ -51,8 +52,10 @@
               aria-hidden="true"></i><i id="icon" class="fa fa-cat fa-flip" aria-hidden="true"></i></div>
           <p id="refresh_message">$$</p>
           <br>
-          <span id="refresh_button_yes" class="button-yes" onclick="window.location.reload()">$$</span>
-          <span id="refresh_button_no" class="button-no" onclick="handleRefreshChecker()">$$</span>
+          <span id="refresh_button_yes" class="button-yes" ontouchstart="window.location.reload()"
+            onclick="window.location.reload()">$$</span>
+          <span id="refresh_button_no" class="button-no" ontouchstart="handleRefreshChecker()"
+            onclick="handleRefreshChecker()">$$</span>
         </div>
       </div>
 
@@ -63,8 +66,10 @@
               aria-hidden="true"></i><i id="icon" class="fa fa-cat fa-flip" aria-hidden="true"></i></div>
           <p id="refresh_language_message">$$</p>
           <br>
-          <span id="refresh_lang_button_yes" class="button-yes" onclick="changeLanguage()">$$</span>
-          <span id="refresh_lang_button_no" class="button-no" onclick="handleLanguage()">$$</span>
+          <span id="refresh_lang_button_yes" class="button-yes" ontouchstart="changeLanguage()"
+            onclick="changeLanguage()">$$</span>
+          <span id="refresh_lang_button_no" class="button-no" ontouchstart="handleLanguage()"
+            onclick="handleLanguage()">$$</span>
         </div>
       </div>
 
@@ -162,11 +167,12 @@
           </form>
         </section>
         <footer id="menubar">
-          <i class="fa-solid fa-globe" onclick="handleLanguage()"></i>
+          <i class="fa-solid fa-globe" ontouchstart="handleLanguage()" onclick="handleLanguage()"></i>
           <span>|</span>
-          <i class=" fa-solid fa-rotate-right" onclick="handleRefreshChecker()"></i>
+          <i class=" fa-solid fa-rotate-right" ontouchstart="handleRefreshChecker()"
+            onclick="handleRefreshChecker()"></i>
           <span>|</span>
-          <i class="fa-solid fa-circle-info" onclick="handleFgContainer()"></i>
+          <i class="fa-solid fa-circle-info" ontouchstart="handleFgContainer()" onclick="handleFgContainer()"></i>
         </footer>
       </div>
     </div>
