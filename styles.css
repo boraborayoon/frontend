@@ -89,7 +89,7 @@ html {
 
 #fg-container .fg-closeButton {
   position: fixed;
-  bottom: 30px;
+  bottom: 20px;
   right: 30px;
   width: 4rem;
   height: 2rem;
@@ -598,7 +598,7 @@ body .label4image2 {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0 0 5px 0;
+  padding: 0 100px 5px 100px;
   background-color: rgb(103, 93, 80);
   color: rgb(243, 222, 186);
   font-size: 1rem;
@@ -606,7 +606,7 @@ body .label4image2 {
 }
 
 #chat #menubar i {
-  padding: 0 50px;
+  padding: 0 10px;
 }
 
 #chat #menubar i:hover {
