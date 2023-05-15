@@ -537,20 +537,21 @@ chatForm.addEventListener("change", (event) => {
 function handleFgContainer() {
   const fgContainer = document.querySelector("#fg-container");
   fgContainer.style.display =
-    fgContainer.style.display === "none" ? "block" : "none";
+    (fgContainer.style.display === "none" || fgContainer.style.display === "") ? "block" : "none";
 }
 
 function handleRefreshChecker() {
   const refreshChecker = document.querySelector("#refresh-checker");
   refreshChecker.style.display =
-    refreshChecker.style.display === "none" ? "block" : "none";
+    (refreshChecker.style.display === "none" || refreshChecker.style.display === "") ? "block" : "none";
 }
 
 
 function handleLanguage() {
   const refreshForLanguage = document.querySelector("#refresh-for-language");
+
   refreshForLanguage.style.display =
-    refreshForLanguage.style.display === "none" ? "block" : "none";
+    (refreshForLanguage.style.display === "none" || refreshForLanguage.style.display === "") ? "block" : "none";
 }
 
 function changeLanguage() {
