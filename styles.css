@@ -418,8 +418,8 @@ body .label4image2 {
 #chat #chat__messages .loading-icon {
   display: none;
   position: absolute;
-  right: 10px;
-  bottom: 130px;
+  right: 5px;
+  bottom: 135px;
   box-shadow: none;
   background-color: transparent;
   transition: display 0.3s ease-in-out;
@@ -593,12 +593,12 @@ body .label4image2 {
 }
 
 #chat #menubar {
-  flex-basis: 30px;
-  min-height: 30px;
+  flex-basis: 35px;
+  min-height: 35px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0;
+  padding: 0 0 5px 0;
   background-color: rgb(103, 93, 80);
   color: rgb(243, 222, 186);
   font-size: 1rem;
@@ -609,7 +609,7 @@ body .label4image2 {
   padding: 0 50px;
 }
 
-/* #chat #menubar i:hover {
+#chat #menubar i:hover {
   cursor: pointer;
   color: white;
-} */
+}

@@ -167,12 +167,13 @@
           </form>
         </section>
         <footer id="menubar">
-          <i class="fa-solid fa-globe" ontouchstart="handleLanguage()" onclick="handleLanguage()"></i>
+          <i id="btnLanguage" class="fa-solid fa-globe" ontouchstart="handleLanguage()" onclick="handleLanguage()"></i>
           <span>|</span>
-          <i class=" fa-solid fa-rotate-right" ontouchstart="handleRefreshChecker()"
+          <i id="btnRefresh" class=" fa-solid fa-rotate-right" ontouchstart="handleRefreshChecker()"
             onclick="handleRefreshChecker()"></i>
           <span>|</span>
-          <i class="fa-solid fa-circle-info"  onclick="handleFgContainer()" ontouchstart="handleFgContainer()"></i>
+          <i id="btnInformation" class="fa-solid fa-circle-info" onclick="handleFgContainer()"
+            ontouchstart="handleFgContainer()"></i>
         </footer>
       </div>
     </div>
@@ -180,6 +181,7 @@
   </div>
 </body>
 <script>
+
   let langMode = ""
 
   document.addEventListener('DOMContentLoaded', () => {
