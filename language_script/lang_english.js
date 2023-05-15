@@ -1,5 +1,5 @@
 const titleElement = document.getElementById("title")
-titleElement.innerText = "반려동물 집사들의 든든한 AI 동반자 - 아임포포 AIm PawPaw.";
+titleElement.innerText = "AI Messenger for Pet Pals - AIm PawPaw ";
 
 const introTitleElement = document.getElementById("intro-title");
 introTitleElement.innerText = "Prologue";
