@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="title">$$</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="shortcut icon" type="image/png" href="./images/com_icon_color.png">
+  <script src="https://kit.fontawesome.com/aabc09496b.js" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TE969Z86P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5TE969Z86P');
+  </script>
+</head>
+
+<body>
+    <div id="container">
+      <div id="chat">
+        <header id="bar">
+            <p class="title">빅스텝</p>
+            <p class="title__sub">AI Messager for Contract Clarification</p>
+            <i class="fa fa-book" aria-hidden="true"></i>
+        </header>
+      
+
+      <main id="chat__messages">
+        <div class="notice"></div>
+            <div class="loading-icon">
+                <span class="loading_span">loading...</span>
+            </div>
+        </main>
+
+      <section id="input">
+        <form id="chat-form">
+            <textarea id="chat_input" class="chat-input" placeholder="$$" maxlength="100"></textarea>
+
+            <select class="chat-select-contract" id="chat-select-contract">
+                <option id="opt10" value="" disabled selected hidden>$$</option>
+            </select>
+            <button type="submit" class="input-button"><i style="background-color:#5B9BD5;font-size:1.3rem;" class="fa-solid fa-paper-plane icon-style"></i></button>
+        </form>
+      </section>
+
+      <footer>
+        <div class="plai-image">
+            제 3회 GS그룹 해커톤
+          <img src="./images/plai.png" alt="Plai Image">
+        </div>
+      </footer>
+    </div>
+    </div>
+</body>
+
+<script>
+    let langMode =""
+
+//     document.addEventListener('DOMContentLoaded', () => {
+//     const loadingIcon = document.querySelector('#main-loading-icon');
+//     const contentDiv = document.querySelector('#content-div');
+
+//     const hideLoadingIcon = () => {
+//       loadingIcon.classList.add('hidden');
+//       contentDiv.style.display = 'block';
+//     }
+
+//     window.addEventListener('load', hideLoadingIcon)
+//   });
+
+
+  const importScript = (scriptSrc) => {
+    const script = document.createElement("script");
+    script.src = scriptSrc;
+    document.head.appendChild(script);
+  }
+
+  importScript("./lang_korea.js")
+
+</script>
+</html>

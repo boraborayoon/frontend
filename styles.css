@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff&family=Gamja+Flower&family=Roboto:wght@100;300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
+body,
+html {
+  color: #2F3645;
+  background: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative; /* relative position을 추가 */
+  overflow: hidden; /* 필요 시 추가하여 스크롤바 제거 */
+}
+
+body::before {
+  content: "";
+  position: fixed; /* absolute 대신 fixed 사용 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.2; /* 투명도를 10%로 설정 */
+  pointer-events: none; /* 배경이 클릭을 방해하지 않도록 설정 */
+}
+
+* {
+    /* box-sizing: border-box; */
+    font-family: "Roboto", "Noto Sans KR", sans-serif;
+  }
+  
+  #main-loading-icon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    color: #939185;
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #E6B9A6;
+  }
+
+  #main-loading-icon.hidden {
+    display: none;
+  }
+  
+  #content-div {
+    display: none;
+  }
+  
+  #container {
+    width: 100%;
+    /*max-width: 550px;*/
+    height: 100%;
+    max-height: 1100px;
+    position: absolute;
+    top: 50%;
+    left: calc(50%);
+    transform: translate(-50%, -50%);
+  }
+
+
+/**** start: chat style ****/
+#chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  /* border-radius: 2rem; */
+  background: white;
+  box-shadow: 0 0 8rem 0 rgba(0, 0, 0, 0.1),
+    0rem 2rem 4rem -3rem rgba(0, 0, 0, 0.5);
+}
+/***** end-chat bar style*****/
+
+#chat #bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-basis: 70px;
+  min-height: 85px;
+  background-image: url("images/logo.png");
+  background-size: cover;
+  padding-left: 10%;
+  /* border-radius: 10px 10px 0 0; */
+}
+
+/*#chat #bar::before 삭제*/
+
+#chat #bar * {
+  margin: 0;
+  z-index: 2;
+  color: white;
+}
+
+#chat #bar .title {
+  font-family: "DynaPuff", 'Noto Sans KR', cursive;
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding-right: 100px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#chat #bar .title:hover {
+  color: #939185;
+}
+
+#chat #bar .title__sub {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+#chat #bar .fa.fa-book {
+  position: absolute;
+  right: 40px;
+  top: 25px;
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  align-self: flex-end;
+  transform: scale(1) rotate(-30deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+#chat #bar .fa.fa-book:hover {
+  color: #939185;
+  transform: rotate(0);
+}
+
+/***** start-chat messenger style*****/
+#chat #chat__messages {
+  /* font-family: "Dongle", sans-serif; */
+  font-weight: 400;
+  line-height: 1.25em;
+  letter-spacing: 0.025em;
+  padding: 1rem;
+  background: rgb(91,155,213,.5);
+  flex-grow: 1;
+  overflow-y: auto;
+  box-shadow: inset 0 2rem 2rem -2rem rgba(0, 0, 0, 0.05),
+    inset 0 -2rem 2rem -2rem rgba(0, 0, 0, 0.05);
+}
+
+
+#chat #chat__messages .notice {
+  font-size: 0.7rem;
+  background: #eee;
+  /* background-color: black; */
+  padding: 0.25rem 1rem;
+  border-radius: 1rem;
+  color: #999;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#chat #chat__messages *:not(.notice) {
+  padding: 0.8rem 1rem;
+  min-height: 2.25rem;
+  width: fit-content;
+  max-width: 66%;
+
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075),
+    0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+
+  animation: floating 0.3s ease-in-out;
+}
+
+#chat #chat__messages .assistant, .reference {
+  /* box-sizing: border-box; */
+  margin: 0.5rem;
+  background: #fff;
+  border-radius: 1.125rem 1.125rem 1.125rem 0;
+  /* box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075),
+    0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1); */
+}
+#chat #chat__messages .user {
+  margin: 1rem 1rem 1rem auto;
+  border-radius: 1.125rem 1.125rem 0 1.125rem;
+  background: yellow;
+  color: rgb(103, 93, 80);
+}
+
+#chat #chat__messages .assistant span {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+#chat #chat__messages .assistant .fa.fa-book {
+  background-color: transparent;
+  padding: 0 5px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  /* box-shadow: none;
+  border-radius: 50%; */
+}
+
+#chat #chat__messages .assistant .fa.fa-book.a {
+  color: rgb(169, 144, 126);
+  animation: typing 3s infinite;
+}
+#chat #chat__messages .assistant .fa.fa-book.b {
+  color: rgb(243, 222, 186);
+  animation: typing 3s 250ms infinite;
+}
+#chat #chat__messages .assistant .fa.fa-book.c {
+  color: rgb(171, 196, 170);
+  animation: typing 3s 500ms infinite;
+}
+#chat #chat__messages .assistant .fa.fa-book.d {
+  color: rgb(169, 144, 126);
+  animation: typing 3s 750ms infinite;
+}
+#chat #chat__messages .assistant .fa.fa-book.e {
+  color: rgb(243, 222, 186);
+  animation: typing 3s 1s infinite;
+}
+#chat #chat__messages .assistant .fa.fa-book.f {
+  color: rgb(171, 196, 170);
+  animation: typing 3s 1250ms infinite;
+}
+
+#chat #chat__messages .loading-icon {
+  display: none;
+  position: absolute;
+  right: 5px;
+  bottom: 135px;
+  box-shadow: none;
+  background-color: transparent;
+  transition: display 0.3s ease-in-out;
+}
+
+#chat #chat__messages .loading-icon .loading_span {
+  font-size: 1rem;
+  padding: 5px 8px;
+  background-color: rgb(169, 144, 126);
+  /* padding: 0.5rem; */
+  border-radius: 4px;
+  box-shadow: none;
+  /* background-color: white; */
+  color: rgb(243, 222, 186);
+  animation: blink 1s linear infinite;
+  /* animation: rotate 1s linear infinite; */
+}
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes typing {
+  0%,
+  75%,
+  100% {
+    transform: translate(0, 0.3rem) scale(0.9);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(0, -0.3rem) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes floating {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/***** end-chat messenger style*****/
+
+/***** start-chat input style*****/
+#chat #input {
+  flex-basis: 80px;
+  min-height: 80px;
+  display: flex;
+  justify-content: center; 
+  align-items: stretch;
+  padding: 1.2rem;
+  background-color: #153553;
+  /* border-radius: 0 0 10px 10px; */
+}
+
+#chat #input #chat-form {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#chat #input #chat-form *:not(.input-button) {
+  border: none;
+  background-color: white;
+  border-radius: 1.125rem 0 0 1.125rem;
+  flex-grow: 1;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1),
+    0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.2);
+  font-weight: 400;
+  padding: 10px;
+  /* letter-spacing: 0.025em; */
+  display: block;
+}
+
+#chat #input #chat-form .chat-input {
+  resize: none;
+  /* display: block; */
+}
+
+#chat #input #chat-form .input-button {
+  border: none;
+  background-image: none;
+  background-color: #5B9BD5;
+  color: rgb(200, 200, 200);
+  border-radius: 0 1.125rem 1.125rem 0;
+  flex-basis: 60px;
+  min-width: 60px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1),
+    0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.2);
+  font-weight: 400;
+}
+
+#chat #input #chat-form .fa-solid{
+  color: rgb(200, 200, 200);
+}
+
+#chat #input #chat-form .icon-style{
+  box-shadow: none; 
+}
+
+#chat #input #chat-form .input-button:hover {
+  cursor: pointer;
+}
+
+/***** end-chat input style*****/
+
+/***** footer *****/
+footer {
+  background-color: rgb(250, 250, 250, 0.5);
+  display: flex;
+  justify-content: center; 
+  padding: 20px; 
+  height: 80px;
+
+  
+}
+footer .plai-image {
+  display: inline-flex; /* Use inline-flex to keep elements in a single line */
+  align-items: center; /* Align items vertically in the center */
+  font-weight: bold;
+}
+
+footer .plai-image img {
+  width: 150px;
+  height: 130px;
+  margin-left: 10px; /* Add some space between the text and the image */
+}
+/***** footer *****/
+
